@@ -1,0 +1,252 @@
+/*Шрифты*/
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/PT_Sans-Web-Regular.ttf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rubik One';
+	src: url('../fonts/RubikOne-Regular.ttf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Underdog';
+	src: url('../fonts/Underdog-Regular.ttf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto Slab';
+	src: url('../fonts/RobotoSlab-Regular.ttf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Russo One';
+	src: url('../fonts/RussoOne-Regular.ttf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Regular.ttf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Neucha';
+	src: url('../fonts/Neucha.ttf');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../fonts/Comfortaa-Regular.ttf');
+	font-style: normal;
+}
+
+// font-family: 'Comfortaa', cursive;
+// font-family: 'Neucha', cursive;
+// font-family: 'Open Sans', sans-serif;
+
+
+/*Less - переменные и примеси, анимация*/
+@background-color: rgb(235, 249, 255);
+@additive-color: rgb(255, 0, 0);
+@double-color: rgb(102, 17, 65);
+@font-color: rgb(0, 0, 0);
+@white-color: rgb(255, 255, 255);
+@black-color: rgb(0, 0, 0);
+@lightgray-color: rgb(211, 211, 211);
+
+@font-family: 'PT Sans', sans-serif;
+
+/*анимация*/
+@keyframes growing {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/*общие стили*/
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Comfortaa', cursive;
+	font-size: 18px;
+	color: @font-color;
+	background-color: @white-color;
+}
+
+h1 {
+	margin: 0;
+}
+
+a {
+	color: @additive-color;
+	text-decoration: none;
+	margin-top: 1%;
+	margin-bottom: 1%;
+
+	transition: 0.5s;
+}
+
+a:hover {
+	color: darken(@additive-color, 15%);
+	text-decoration: underline;
+}
+
+.new {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+	width: 100%;
+	min-height: 100%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	background-color: @white-color;
+	color: @additive-color;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+}
+
+.content-item {
+	flex-shrink: 2;
+	width: 60%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	cursor: pointer;
+
+	transition: 0.5s;
+}
+
+.content-item h2 {
+	padding: 2%;
+	background-color: rgba(255, 0, 0, 0.2);
+
+	transition: 0.5s;
+}
+
+// .new .content-item:hover {
+// 	background-size: contain;
+// }
+
+.content-item:hover h2 {
+	color: darken(@additive-color, 15%);
+	background-color: rgba(255, 0, 0, 0.3);
+}
+
+.content-item:nth-of-type(1) {
+	background: rgba(255, 255, 255, 0) url('../img/work1.png') no-repeat 100% 0;
+	background-size: contain;
+}
+
+.content-item:nth-of-type(2) {
+	background: rgba(255, 255, 255, 0) url('../img/work2.jpg') no-repeat 0 0;
+	background-size: contain;
+}
+
+.content-item:nth-of-type(3) {
+	background: rgba(255, 255, 255, 0) url('../img/work3.png') no-repeat 100% 0;
+	background-size: contain;
+}
+
+.content-item:nth-of-type(4) {
+	background: rgba(255, 255, 255, 0) url('../img/work4.png') no-repeat 0 0;
+	background-size: contain;
+}
+
+.content-item:nth-of-type(5) {
+	background: rgba(255, 255, 255, 0) url('../img/work5.jpg') no-repeat 100% 0;
+	background-size: contain;
+}
+
+.content-item:nth-of-type(odd) {
+	text-align: left;
+	transform: rotate(2deg);
+}
+
+.content-item:nth-of-type(even) {
+	text-align: right;
+	transform: rotate(-2deg);
+}
+/*разнфые цвета*/
+.content-item:nth-of-type(even) {
+	h2 {
+		background-color: rgba(102, 17, 65, 0.2);
+		color: @double-color;
+	}
+
+	p {
+		color: @double-color;
+	}
+}
+
+.content-item:nth-of-type(even):hover h2 {
+	background-color: rgba(102, 17, 65, 0.3);
+	color: darken(@double-color, 15%);
+}
+/*разнфые цвета*/
+
+.content-item p {
+	padding-left: 5%;
+	padding-right: 5%;
+	font-family: 'Open Sans', sans-serif;
+	color: @additive-color;
+}
+
+.content-item img {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.content-item p,
+.content-item img {
+	display: none;
+}
+
+/*for JS*/
+.new .content-item.active {
+	transform: rotate(0deg);
+	background: none;
+
+	p,
+	img {
+		display: block;
+	}
+}
+
+/*media queries*/
+@media screen and (max-width: 480px) {
+	html,
+	body {
+		font-size: 14px;
+	}
+
+	h1 {
+		font-size: 22px;
+	}
+
+	h2 {
+		font-size: 16px;
+	}
+
+	.content-item {
+		width: 75%;
+	}
+}
