@@ -90,20 +90,24 @@ body {
 	background-color: @white-color;
 }
 
+.page-wrapper {
+	width: 100%;
+}
+
 h1 {
 	margin: 0;
 }
 
 a {
 	color: @additive-color;
-	text-decoration: none;
 	margin-top: 1%;
 	margin-bottom: 1%;
+
+	transition: 0.5s;
 }
 
 a:hover {
 	color: darken(@additive-color, 15%);
-	text-decoration: underline;
 }
 
 .new {
