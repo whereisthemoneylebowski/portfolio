@@ -174,17 +174,17 @@ a:hover {
 	background-size: contain;
 }
 
-.content-item:nth-of-type(odd) {
+.content-item:nth-of-type(even) {
 	text-align: left;
 	transform: rotate(2deg);
 }
 
-.content-item:nth-of-type(even) {
+.content-item:nth-of-type(odd) {
 	text-align: right;
 	transform: rotate(-2deg);
 }
 /*разнфые цвета*/
-.content-item:nth-of-type(even) {
+.content-item:nth-of-type(odd) {
 	h2 {
 		background-color: rgba(102, 17, 65, 0.2);
 		color: @double-color;
@@ -195,7 +195,7 @@ a:hover {
 	}
 }
 
-.content-item:nth-of-type(even):hover h2 {
+.content-item:nth-of-type(odd):hover h2 {
 	background-color: rgba(102, 17, 65, 0.3);
 	color: darken(@double-color, 15%);
 }
